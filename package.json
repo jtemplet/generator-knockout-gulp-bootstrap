@@ -1,0 +1,44 @@
+{
+  "name": "generator-knockout-gulp-bootstrap",
+  "version": "0.0.1",
+  "description": "Yeoman generatorn to create HTML5 Knockout.js webapps with Gulp",
+  "license": "MIT",
+  "main": "app/index.js",
+  "repository": "jtemplet/generator-knockout-gulp-bootstrap",
+  "author": {
+    "name": "Jason Templeton",
+    "email": "jtemple77@gmail.com",
+    "url": "https://github.com/jtemplet"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "test": "mocha --reporter spec"
+  },
+  "files": [
+    "app"
+  ],
+  "keywords": [
+    "yeoman-generator",
+    "gulp",
+    "knockout"
+  ],
+  "dependencies": {
+    "chalk": "~0.4.0",
+    "cheerio": "^0.16.0",
+    "github": "^0.2.1",
+    "npm-name": "^0.2.0",
+    "wiredep": "^1.8.2",
+    "yeoman-generator": "~0.16.0",
+    "yosay": "^0.1.0"
+  },
+  "devDependencies": {
+    "mocha": "*"
+  },
+  "peerDependencies": {
+    "yo": ">=1.0.0",
+    "generator-mocha": ">=0.1.0",
+    "gulp": ">=3.5.0"
+  }
+}
