@@ -4,17 +4,15 @@ var fs = require('fs');
 var path = require('path');
 var spawn = require('child_process').spawn;
 var yeoman = require('yeoman-generator');
-var url = require('url');
-var npmName = require('npm-name');
 var yosay = require('yosay');
 var chalk = require('chalk');
 var wiredep = require('wiredep');
+var GitHubApi = require('github');
 
 var githubOptions = {
     version: '3.0.0'
 };
 
-var GitHubApi = require('github');
 var github = new GitHubApi(githubOptions);
 
 if (process.env.GITHUB_TOKEN) {
@@ -228,13 +226,13 @@ var KnockoutGulpBootstrapGenerator = yeoman.generators.Base.extend({
 
     app: function () {
         this.mkdir('app');
-        this.mkdir('app/templates');
+        this.mkdir('app/images');
         this.mkdir('app/scripts');
         this.mkdir('app/scripts/models');
         this.mkdir('app/scripts/views');
         this.mkdir('app/scripts/viewmodels');
         this.mkdir('app/styles');
-        this.mkdir('app/images');
+        this.mkdir('app/vendor');
         this.mkdir('app/fonts');
         this.write('app/index.html', this.indexFile);
         //this.write('app/scripts/main.js', 'console.log(\'\\\'Allo \\\'Allo!\');');
