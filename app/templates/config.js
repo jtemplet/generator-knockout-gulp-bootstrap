@@ -1,15 +1,30 @@
-define(['toastr'], function (toastr) {
-    var debug = true;
-    var plugins = {
-        router: true,
-        widget: true
-    };
-    // configure toastr settings
-    toastr.options.timeOut = 4000;
-    toastr.options.positionClass = 'toast-bottom-right';
-    toastr.options.backgroundpositionClass = 'toast-bottom-right';
-    return {
-        debug: debug,
-        plugins: plugins
-    };
+require.config({
+  // make bower_components more sensible
+  // expose jquery
+  paths: {
+    'bower_components': '../bower_components',
+    'jquery': '../bower_components/jquery/jquery'
+  },
+  map: {
+    '*': {
+      'knockout': '../bower_components/knockout.js/knockout',
+      'ko': '../bower_components/knockout.js/knockout'
+    }
+  }
 });
+
+// Use the debug version of knockout it development only
+// When compiling with grunt require js will only look at the first
+// require.config({}) found in this file
+require.config({
+  map: {
+    '*': {
+      'knockout': '../bower_components/knockout.js/knockout-2.3.0.debug',
+      'ko': '../bower_components/knockout.js/knockout-2.3.0.debug'
+    }
+  }
+});
+
+if (!window.requireTestMode) {
+  require(['main'], function(){ });
+}

@@ -63,7 +63,7 @@ var KnockoutGulpBootstrapGenerator = yeoman.generators.Base.extend({
         // welcome message
         if (!this.options['skip-welcome-message']) {
             this.log(yosay());
-            this.log(chalk.magenta('Out of the box I include HTML5 Boilerplate, jQuery, and a gulpfile.js to build your app.'));
+            this.log(chalk.magenta('Out of the box I include HTML5 Boilerplate, jQuery, Knockout, and a gulpfile.js to build your app.'));
         }
 
         var prompts = [
@@ -171,7 +171,7 @@ var KnockoutGulpBootstrapGenerator = yeoman.generators.Base.extend({
         if (this.includeModernizr) {
             bower.dependencies.modernizr = '~2.8.1';
         }
-
+        bower.dependencies.knockout = '~3.2.0';
         this.copy('bowerrc', '.bowerrc');
         this.write('bower.json', JSON.stringify(bower, null, 2));
     },
